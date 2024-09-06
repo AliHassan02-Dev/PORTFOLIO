@@ -1,0 +1,757 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #060606;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.mainWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOME CONTAINER CSS */
+.homeContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR CSS */
+/* MENU CSS */
+.menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #060606;
+  transform: translateY(-100%);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.menu .links {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 40px;
+}
+
+.menu .links a {
+  color: white;
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 10px;
+}
+.menu .links a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-out;
+}
+.menu .links a:hover::before {
+  width: 100%;
+}
+
+.navBar {
+  margin: 30px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  position: relative;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  z-index: 25;
+}
+
+.navBar a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+.navBar .menuBtn,
+.navBar .menuBtn-active {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 1 !important;
+}
+.navBar .menuBtn span,
+.navBar .menuBtn-active span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 1 !important;
+}
+.navBar .menuBtn #line1 {
+  transform: translateY(-8px);
+}
+.navBar .menuBtn #line2 {
+  width: 70%;
+}
+.navBar .menuBtn #line3 {
+  width: 40%;
+  transform: translateY(8px);
+}
+/* ACTIVE CLASSES */
+.navBar .menuBtn-active {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navBar .menuBtn-active #line1 {
+  transform: translateY(5px) rotate(45deg) !important;
+}
+.navBar .menuBtn-active #line2 {
+  width: 70%;
+  transform: translateX(150%) !important;
+}
+.navBar .menuBtn-active #line3 {
+  width: 100%;
+  transform: translateY(-1px) rotate(-45deg) !important;
+}
+
+/* HERO SECTION CSS */
+.homeContainer .heroContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.homeContainer .heroContainer h2 {
+  font-size: 200px;
+  font-weight: bold;
+  position: absolute;
+}
+.homeContainer .heroContainer .nonStroke {
+  z-index: 5;
+}
+.homeContainer .heroContainer .strokeText1,
+.homeContainer .heroContainer .strokeText2 {
+  -webkit-text-stroke: 2px #fff;
+  -webkit-text-fill-color: #060606;
+  opacity: 0;
+}
+.homeContainer .heroContainer .strokeText1 {
+  transform: translateY(0%);
+}
+.homeContainer .heroContainer .strokeText2 {
+  transform: translateY(0%);
+}
+
+/* ABOUT SECTION CSS */
+.mainWrapper .aboutContainer {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 30px;
+}
+
+.mainWrapper .aboutContainer .left,
+.mainWrapper .aboutContainer .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  overflow: hidden;
+}
+
+.mainWrapper .aboutContainer .left h2 {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.mainWrapper .aboutContainer .left p {
+  color: white;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.mainWrapper .aboutContainer .left .imageBox {
+  width: 100%;
+  height: 350px;
+  background-image: url(./assets/2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform-origin: top;
+}
+
+.mainWrapper .aboutContainer .right {
+  align-items: flex-end;
+}
+
+.mainWrapper .aboutContainer .right .circleImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-image: url(./assets/circleText.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainWrapper .aboutContainer .right h2 {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.mainWrapper .aboutContainer .right p {
+  color: white;
+  font-size: 22px;
+  font-weight: 300;
+  text-align: right;
+}
+
+/* SKILLS SECTION CSS */
+/* ABOUT SECTION CSS */
+.mainWrapper .skillsContainer {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.mainWrapper .skillsContainer .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainWrapper .skillsContainer .top .left,
+.mainWrapper .skillsContainer .top .right {
+  flex: 1;
+}
+
+.mainWrapper .skillsContainer .top .left h2 {
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+}
+.mainWrapper .skillsContainer .top .right p {
+  font-size: 22px;
+}
+
+.mainWrapper .skillsContainer .bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px 0px;
+}
+
+.mainWrapper .skillsContainer .bottom {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 0px 60px;
+}
+.mainWrapper .skillsContainer .bottom .skillBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.mainWrapper .skillsContainer .bottom .skillBar .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mainWrapper .skillsContainer .bottom .skillBar .left p {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+}
+.mainWrapper .skillsContainer .bottom .skillBar .left h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.mainWrapper .skillsContainer .bottom .skillBar .right .skillLogo {
+  font-size: 50px;
+  color: white;
+  margin-right: 10px;
+}
+
+/* PROJECTS SECTION CSS */
+.mainWrapper .projectContainer {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  gap: 30px;
+}
+
+.mainWrapper .projectContainer .top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainWrapper .projectContainer .top .left,
+.mainWrapper .projectContainer .top .right {
+  flex: 1;
+}
+
+.mainWrapper .projectContainer .top .left h2 {
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+}
+.mainWrapper .projectContainer .top .right p {
+  font-size: 22px;
+}
+
+.mainWrapper .projectContainer .bottom {
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+}
+
+.mainWrapper .projectContainer .bottom {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 100px;
+}
+
+.mainWrapper .projectContainer .bottom .projectBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  position: relative;
+  cursor: pointer;
+  cursor: pointer;
+}
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.projectLine {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mainWrapper .projectContainer .bottom .projectBar .left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mainWrapper .projectContainer .bottom .projectBar .left p {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+}
+.mainWrapper .projectContainer .bottom .projectBar .left h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.mainWrapper .projectContainer .bottom .projectBar .right .arrow {
+  font-size: 30px;
+  color: white;
+  margin-right: 10px;
+  transform: rotate(-40deg);
+}
+
+/* HORIZONTAL SCROLING CSS */
+
+.aboutSection,
+.skillsSection,
+.projectSection {
+  width: 100vw;
+  height: 100vh;
+}
+
+.aboutSection {
+  background-color: burlywood;
+}
+
+.skillsSection {
+  background-color: peru;
+}
+
+.projectSection {
+  background-color: palegoldenrod;
+}
+
+.horizontalScrolling {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* .containers {
+  position: absolute;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(100%) !important;
+} */
+
+/* RIBBONS SECTION CSS */
+.mainWrapper .ribbonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 50px 0px;
+}
+
+.mainWrapper .ribbonContainer p {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+.mainWrapper .ribbonContainer span {
+  -webkit-text-stroke: 1px #fff;
+  -webkit-text-fill-color: #060606;
+}
+
+/* FOOTER SECTION CSS */
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 40px auto;
+}
+
+.footer .left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer .left .socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.footer .left .socialLinks a {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+.footer .left p {
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.footer .right h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+/* ALL PROJECTS PAGE CSS */
+.projectsContainer {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  padding: 40px 10px;
+}
+
+.projectsContainer .hdg {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+}
+
+.projectsContainer .projectsWrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  margin: 50px 0px;
+}
+
+.projectsContainer .projectsWrapper .projectBox {
+  width: 100%;
+  max-width: 520px;
+  height: 350px;
+  margin-bottom: 20px;
+}
+
+.projectsContainer .projectsWrapper .projectBox .thumbnail {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectsContainer .projectsWrapper .projectBox .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.projectsContainer .projectsWrapper .projectBox .thumbnail .overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: -100%;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.projectsContainer .projectsWrapper .projectBox .thumbnail:hover .overlay {
+  top: 0;
+}
+
+.projectsContainer .projectsWrapper .projectBox .thumbnail .overlay .iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.projectsContainer
+  .projectsWrapper
+  .projectBox
+  .thumbnail
+  .overlay
+  .iconBox:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+}
+
+.projectsContainer .projectsWrapper .projectBox .thumbnail .overlay .linkIcon {
+  font-size: 25px;
+  color: white;
+}
+
+/* PROJECT DETAILS CSS */
+.projectDetails {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  gap: 40px;
+}
+
+.projectDetails .left {
+  flex: 2;
+}
+
+.projectDetails .left img {
+  width: 100%;
+}
+
+.projectDetails .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 20px 0px;
+}
+
+.projectDetails .right .projectContent {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.projectDetails .right .projectContent h2 {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.projectDetails .right .projectContent p {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.projectDetails .right .projectTechnology {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projectDetails .right .projectTechnology h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.projectDetails .right .projectTechnology .icons {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.projectDetails .right .projectTechnology .techName {
+  color: white;
+  font-size: 60px;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.3s ease-in-out;
+}
+/* SKILL LOGOS COLOR */
+.projectDetails .right .projectTechnology .techName:hover.html {
+  background-color: #f16529;
+  padding: 8px;
+  border-radius: 5px;
+}
+.projectDetails .right .projectTechnology .techName:hover.css {
+  background-color: #264de4;
+  padding: 8px;
+  border-radius: 5px;
+}
+.projectDetails .right .projectTechnology .techName:hover.js {
+  color: #f7e018 !important;
+  padding: 8px;
+}
+.projectDetails .right .projectTechnology .techName:hover.react {
+  background-color: #61dbfb;
+  padding: 8px;
+  border-radius: 5px;
+}
+.projectDetails .right .projectTechnology .techName:hover.wordpress {
+  background-color: #61dbfb;
+  padding: 8px;
+  border-radius: 5px;
+}
+.projectDetails .right .projectTechnology .techName:hover.node,
+.projectDetails .right .projectTechnology .techName:hover.mongodb {
+  background-color: #539e43;
+  padding: 8px;
+  border-radius: 5px;
+}
+.projectDetails .right .projectTechnology .techName:hover.vite {
+  background: linear-gradient(
+    90deg,
+    rgba(88, 194, 254, 1) 0%,
+    rgba(175, 83, 255, 1) 100%
+  );
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.projectDetails .right .links {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.projectDetails .right .links h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.projectDetails .right .links .icons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.projectDetails .right .links .linkIcon {
+  color: white;
+  font-size: 50px;
+  padding: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.projectDetails .right .links .linkIcon:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+}
